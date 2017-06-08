@@ -5,6 +5,9 @@ import ProfilePic from "./ProfilePic";
 
 class Avatar extends React.Component {
   render() {
+    if (this.props.user) {
+      console.log(this.props.user);
+    }
     return (
       <div className="avatar">
         <ProfilePic imageURL={this.props.user.imageURL} />
@@ -12,6 +15,9 @@ class Avatar extends React.Component {
         <ProfileLink username={this.props.user.username} />
       </div>
     );
+  } else {
+    return <Loading />;
   }
+}
 }
 export default Avatar;

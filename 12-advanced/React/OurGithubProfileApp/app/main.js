@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Avatar from "./components/Avatar";
 import Home from "./components/Home";
-import "./utils/GithubHelpers";
+import "../utils/GithubHelpers";
 
 const USER_DATA = {
   name: "Jeremy Ashkenas",

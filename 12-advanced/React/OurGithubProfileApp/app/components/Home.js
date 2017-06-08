@@ -1,18 +1,33 @@
 import React from "react";
 
 class Home extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    console.log(this.props);
     this.state = {};
-    //Make sure everytime
+    //Make sure everytime pickRandomStudent
 
-    this.pickRandomStudnet = this.pickRandomStudent.bind(this);
+    this.pickRandomStudent = this.pickRandomStudent.bind(this);
   }
 
   pickRandomStudent() {
-    this.setState({
-      numClicks: this.state.numClicks + 1
-    });
+    const wdi21 = [
+      "PhilG112",
+      "fimac",
+      "katiepetersonn",
+      "lukemico",
+      "matt2c",
+      "jamesnugent00",
+      "johnstonchristo",
+      "Xtian03",
+      "lynly",
+      "Bijay-Panthi",
+      "SimoTr84"
+    ];
+    const randomIndex = Math.floor(Math.random() * wdi21.length);
+    const chosenOne = wdi21[randomIndex];
+    const url = `/details/${chosenOne}`;
+    this.props.history.push(url);
   }
   render() {
     return (
